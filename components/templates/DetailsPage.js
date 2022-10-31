@@ -1,5 +1,4 @@
-import { Slide } from "../atoms";
-import { Back } from "../molecules";
+import { Back, ProductDesc, ProductInfo } from "../molecules";
 import { DetailProducts, Header } from "../organisms";
 
 const DetailsPage = ({ product }) => {
@@ -10,10 +9,8 @@ const DetailsPage = ({ product }) => {
         <Back href="/" text="Back to products" />
       </Header>
       <DetailProducts>
-        <div className="col-md-8">
-          <Slide imgs={images} />
-        </div>
-        <div className="col-md-4">Information</div>
+        <ProductDesc images={images} />
+        <ProductInfo />
       </DetailProducts>
     </>
   );

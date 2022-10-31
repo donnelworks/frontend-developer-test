@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const Slide = ({ imgs }) => {
+const Slide = ({ images }) => {
   return (
     <div
       id="carouselExampleIndicators"
@@ -22,18 +22,19 @@ const Slide = ({ imgs }) => {
           data-bs-slide-to="1"
           aria-label="Slide 2"
         ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="2"
-          aria-label="Slide 3"
-        ></button>
       </div>
       <div className="carousel-inner">
-        {/* {imgs.map} */}
+        {/* {images.map} */}
         <div className="carousel-item active">
           <img
             src="https://dummyjson.com/image/i/products/1/1.jpg"
+            className="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div className="carousel-item">
+          <img
+            src="https://dummyjson.com/image/i/products/1/3.jpg"
             className="d-block w-100"
             alt="..."
           />
@@ -62,7 +63,7 @@ const Slide = ({ imgs }) => {
 };
 
 // Slide.propTypes = {
-//   imgs: PropTypes.arrayOf(PropTypes.string).isRequired,
+//   images: PropTypes.arrayOf(PropTypes.string).isRequired,
 // };
 
 export default Slide;

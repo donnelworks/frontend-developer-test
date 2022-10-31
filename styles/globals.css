@@ -34,12 +34,6 @@ input, button {
     background-color: var(--soft-gray);
 }
 
-/* Image */
-.card-img-top {
-    height: 162px;
-    object-fit: cover;
-}
-
 /* Button */
 .btn {
     font-weight: 600;
@@ -109,6 +103,11 @@ input, button {
     background-clip: border-box;
     border: 1px solid #BABABA;
     border-radius: 5px;
+}
+
+.card-img-top {
+    height: 162px;
+    object-fit: cover;
 }
 
 .card-title {
@@ -223,4 +222,36 @@ input, button {
 /* Carousel */
 .carousel-inner {
     border-radius: 5px;
+    max-height: 400px !important;
+}
+
+/* Product Description */
+.description-title {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18.15px;
+}
+
+.description-text {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18.15px;
+}
+
+.product-info_title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+}
+
+.product-info_rating {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+}
+
+.product-info_price {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
 }
