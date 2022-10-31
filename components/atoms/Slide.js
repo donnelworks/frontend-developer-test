@@ -61,8 +61,8 @@ const Slide = ({ imgs }) => {
   );
 };
 
-Slide.propTypes = {
-  imgs: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
+// Slide.propTypes = {
+//   imgs: PropTypes.arrayOf(PropTypes.string).isRequired,
+// };
 
 export default Slide;

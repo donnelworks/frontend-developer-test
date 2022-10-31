@@ -1,4 +1,3 @@
-import React from "react";
 import { Slide } from "../atoms";
 import { Back } from "../molecules";
 import { DetailProducts, Header } from "../organisms";
