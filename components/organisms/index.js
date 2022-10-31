@@ -1,4 +1,5 @@
 import Header from "./Header";
-import Products from "./Products";
+import ListProducts from "./ListProducts";
+import DetailProducts from "./DetailProducts";
 
-export { Header, Products };
+export { Header, ListProducts, DetailProducts };

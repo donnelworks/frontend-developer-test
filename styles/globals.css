@@ -86,6 +86,17 @@ input, button {
     border-color: 0;
 }
 
+.btn-back {
+    color: #F90303;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14.52px;
+}
+
+.btn-back:hover {
+    color: #F90303;
+}
+
 
 /* Card */
 .card {
@@ -110,6 +121,11 @@ input, button {
     font-size: 12px;
     font-weight: 300;
     line-height: 14.52px;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .card-item ul {
@@ -122,7 +138,7 @@ input, button {
      display: inline;
 }
 
- .card-item li:not(:last-child) {
+.card-item li:not(:last-child) {
     border-right: 2px solid #B4B3B3;
 }
 
@@ -197,5 +213,14 @@ input, button {
 
 /* Header */
 .header-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 63px;
     background-color: var(--soft-gray);
+}
+
+/* Carousel */
+.carousel-inner {
+    border-radius: 5px;
 }

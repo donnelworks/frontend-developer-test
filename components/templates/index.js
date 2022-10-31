@@ -1,3 +1,4 @@
-import ListProduct from "./ListProduct";
+import ListProductPage from "./ListProductPage";
+import DetailsPage from "./DetailsPage";
 
-export { ListProduct };
+export { ListProductPage, DetailsPage };

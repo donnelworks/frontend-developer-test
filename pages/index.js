@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
-import { ListProduct } from "../components/templates";
-import { getAllProducts } from "./api/productApi";
+import { ListProductPage } from "../components/templates";
+import { getAllProducts, getAllCategories } from "./api/productApi";
 const Home = () => {
   // State
   const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     loadAllProducts();
+    loadAllCategories();
   }, []);
 
   // Load All Products
@@ -15,9 +17,15 @@ const Home = () => {
     setProducts(data);
   };
 
+  // Load All Categories
+  const loadAllCategories = async () => {
+    const { data } = await getAllCategories();
+    setCategories(data);
+  };
+
   return (
     <>
-      <ListProduct products={products} />
+      <ListProductPage products={products} categories={categories} />
     </>
   );
 };

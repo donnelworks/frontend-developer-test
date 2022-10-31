@@ -1,14 +1,14 @@
 import PropTypes from "prop-types";
 
-const Select = ({ options = [], ...props }) => {
+const Select = ({ options = [], placeholder, ...props }) => {
   return (
-    <select className="form-select my-md-3 my-2" {...props}>
-      {options.map((option) => {
-        const { value } = option;
+    <select className="form-select" {...props}>
+      {placeholder !== "" && <option value="">{placeholder}</option>}
+      {options.map((option, i) => {
         if (options.length > 0) {
           return (
-            <option key={value} value={option.value}>
-              {option.label}
+            <option key={i} value={option}>
+              {option}
             </option>
           );
         }
@@ -18,7 +18,8 @@ const Select = ({ options = [], ...props }) => {
 };
 
 Select.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.object),
+  options: PropTypes.arrayOf(PropTypes.string),
+  placeholder: PropTypes.string,
 };
 
 export default Select;
