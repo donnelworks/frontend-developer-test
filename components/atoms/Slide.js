@@ -1,44 +1,44 @@
-import PropTypes from "prop-types";
+import { useContext, useEffect, useState } from "react";
+import { DetailsContext } from "../../contexts/DetailsContext";
 
-const Slide = ({ images }) => {
+const Slide = () => {
+  // Context
+  const { images } = useContext(DetailsContext);
+
+  // State
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (images) {
+      setLoading(false);
+    }
+  }, [images]);
+
+  if (loading) {
+    return null;
+  }
+
   return (
     <div
       id="carouselExampleIndicators"
       className="carousel slide"
       data-bs-ride="carousel"
     >
-      <div className="carousel-indicators">
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="0"
-          className="active"
-          aria-current="true"
-          aria-label="Slide 1"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-        ></button>
-      </div>
       <div className="carousel-inner">
-        {/* {images.map} */}
-        <div className="carousel-item active">
-          <img
-            src="https://dummyjson.com/image/i/products/1/1.jpg"
-            className="d-block w-100"
-            alt="..."
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            src="https://dummyjson.com/image/i/products/1/3.jpg"
-            className="d-block w-100"
-            alt="..."
-          />
-        </div>
+        {images.map((image, i) => {
+          return (
+            <div
+              key={i}
+              className={i === 0 ? "carousel-item active" : "carousel-item"}
+            >
+              <img
+                src={image}
+                className="d-block w-100"
+                alt={`thumbnail-${i}`}
+              />
+            </div>
+          );
+        })}
       </div>
       <button
         className="carousel-control-prev"
@@ -61,9 +61,5 @@ const Slide = ({ images }) => {
     </div>
   );
 };
-
-// Slide.propTypes = {
-//   images: PropTypes.arrayOf(PropTypes.string).isRequired,
-// };
 
 export default Slide;

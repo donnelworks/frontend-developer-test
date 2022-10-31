@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Button } from "../atoms";
+import { number } from "../../utils";
 
 const ProductItem = ({ id, thumbnail, title, description, rating, price }) => {
   return (
@@ -16,7 +17,7 @@ const ProductItem = ({ id, thumbnail, title, description, rating, price }) => {
                 <img src="/assets/imgs/icons/star.svg" className="me-1" />
                 {rating}
               </li>
-              <li className="card-item_price">${price}</li>
+              <li className="card-item_price">${number(price)}</li>
             </ul>
           </div>
           <div className="d-grid col-8 mx-auto">

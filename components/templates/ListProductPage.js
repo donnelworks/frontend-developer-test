@@ -1,12 +1,9 @@
-import { Filter, ProductItem } from "../molecules";
-import { Header, ListProducts } from "../organisms";
+import { ProductItem } from "../molecules";
+import { ListProducts } from "../organisms";
 
-const ListProductPage = ({ products, categories }) => {
+const ListProductPage = ({ products }) => {
   return (
     <>
-      <Header>
-        <Filter categories={categories} />
-      </Header>
       <ListProducts>
         {products.map((product) => {
           const { id, thumbnail, title, description, rating, price } = product;

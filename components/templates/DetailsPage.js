@@ -1,15 +1,11 @@
-import { Back, ProductDesc, ProductInfo } from "../molecules";
-import { DetailProducts, Header } from "../organisms";
+import { ProductDesc, ProductInfo } from "../molecules";
+import { DetailProducts } from "../organisms";
 
-const DetailsPage = ({ product }) => {
-  const { images } = product;
+const DetailsPage = () => {
   return (
     <>
-      <Header>
-        <Back href="/" text="Back to products" />
-      </Header>
       <DetailProducts>
-        <ProductDesc images={images} />
+        <ProductDesc />
         <ProductInfo />
       </DetailProducts>
     </>
