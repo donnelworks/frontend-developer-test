@@ -1,14 +1,21 @@
 import PropTypes from "prop-types";
+import { splitCapital } from "../../utils";
 
-const Select = ({ options = [], placeholder, ...props }) => {
+const Select = ({ options = [], onChange, placeholder, ...props }) => {
   return (
-    <select className="form-select" {...props}>
-      {placeholder !== "" && <option value="">{placeholder}</option>}
+    <select
+      className="form-select"
+      onChange={(e) => onChange(e.target.value)}
+      {...props}
+    >
+      {placeholder !== "" && (
+        <option value="">{splitCapital(placeholder)}</option>
+      )}
       {options.map((option, i) => {
         if (options.length > 0) {
           return (
             <option key={i} value={option}>
-              {option}
+              {category(option)}
             </option>
           );
         }

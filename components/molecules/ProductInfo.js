@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { number } from "../../utils";
+import { number, splitCapital } from "../../utils";
 import { DetailsContext } from "../../contexts/DetailsContext";
 
 const ProductInfo = () => {
@@ -27,7 +27,7 @@ const ProductInfo = () => {
       <h2 className="product-info_price mt-2 mb-3">${number(price)}</h2>
 
       <p className="product-info_sub mb-1">
-        Category: <strong>{category}</strong>
+        Category: <strong>{splitCapital(category)}</strong>
       </p>
       <p className="product-info_sub">
         Brand: <strong>{brand}</strong>
