@@ -12,6 +12,8 @@ const Home = () => {
   // State
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [categoryVal, setCategoryVal] = useState("");
+  const [searchVal, setSearchVal] = useState("");
   const [loading, setLoading] = useState(true);
 
   // Load All Products
