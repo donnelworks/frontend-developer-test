@@ -10,4 +10,4 @@ function splitCapital(string) {
   return arr.join(" ");
 }
 
-export { number, category };
+export { number, splitCapital };

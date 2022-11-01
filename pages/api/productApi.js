@@ -26,4 +26,16 @@ async function getCategory(category) {
   return { data: res.data.products };
 }
 
-export { getAllProducts, getAllCategories, getProduct, getCategory };
+// Search Product
+async function searchProduct(key) {
+  const res = await axios.get(`${BASE_URL}/search?q=${key}`);
+  return { data: res.data.products };
+}
+
+export {
+  getAllProducts,
+  getAllCategories,
+  getProduct,
+  getCategory,
+  searchProduct,
+};

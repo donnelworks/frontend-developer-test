@@ -6,6 +6,7 @@ import {
   getAllProducts,
   getAllCategories,
   getCategory,
+  searchProduct,
 } from "./api/productApi";
 const Home = () => {
   // State
@@ -23,6 +24,17 @@ const Home = () => {
   const loadAllCategories = async () => {
     const { data } = await getAllCategories();
     setCategories(data);
+  };
+
+  // Search Product
+  const handlerSearch = async (key) => {
+    if (key === "") {
+      const { data } = await getAllProducts();
+      setProducts(data);
+    } else {
+      const { data } = await searchProduct(key);
+      setProducts(data);
+    }
   };
 
   // Change Category
@@ -47,7 +59,8 @@ const Home = () => {
       <Header>
         <Filter
           categories={categories}
-          onChange={(val) => handlerCategory(val)}
+          onChangeText={(val) => handlerSearch(val)}
+          onChangeSelect={(val) => handlerCategory(val)}
         />
       </Header>
       {!loading && <ListProductPage products={products} />}
