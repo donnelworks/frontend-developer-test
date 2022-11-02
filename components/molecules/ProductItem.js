@@ -30,7 +30,12 @@ const ProductItem = ({ id, thumbnail, title, description, rating, price }) => {
 };
 
 ProductItem.propTypes = {
+  id: PropTypes.number.isRequired,
   thumbnail: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
 };
 
 export default ProductItem;

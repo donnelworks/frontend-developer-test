@@ -1,6 +1,7 @@
 import { EmptyList } from "../atoms";
 import { ProductItem } from "../molecules";
 import { ListProducts } from "../organisms";
+import PropTypes from "prop-types";
 
 const ListProductPage = ({ products }) => {
   return (
@@ -30,6 +31,10 @@ const ListProductPage = ({ products }) => {
       </ListProducts>
     </>
   );
+};
+
+ListProductPage.propTypes = {
+  products: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default ListProductPage;

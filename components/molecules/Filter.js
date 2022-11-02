@@ -1,4 +1,5 @@
 import { Input, Select } from "../atoms";
+import PropTypes from "prop-types";
 
 const Filter = ({
   categories,
@@ -26,6 +27,14 @@ const Filter = ({
       </div>
     </div>
   );
+};
+
+Filter.propTypes = {
+  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
+  searchValue: PropTypes.string,
+  categoryValue: PropTypes.string,
+  onChangeSelect: PropTypes.func.isRequired,
+  onChangeText: PropTypes.func.isRequired,
 };
 
 export default Filter;

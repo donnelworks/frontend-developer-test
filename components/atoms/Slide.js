@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Slide = ({ images }) => {
   return (
     <div
@@ -41,6 +43,10 @@ const Slide = ({ images }) => {
       </button>
     </div>
   );
+};
+
+Slide.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Slide;

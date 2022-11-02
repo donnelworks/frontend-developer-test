@@ -1,4 +1,5 @@
 import { Slide } from "../atoms";
+import PropTypes from "prop-types";
 
 const ProductDesc = ({ images, description }) => {
   return (
@@ -14,6 +15,11 @@ const ProductDesc = ({ images, description }) => {
       </div>
     </div>
   );
+};
+
+ProductDesc.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.string).isRequired,
+  description: PropTypes.string,
 };
 
 export default ProductDesc;

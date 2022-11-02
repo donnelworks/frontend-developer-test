@@ -1,4 +1,5 @@
 import { number, splitCapital } from "../../utils";
+import PropTypes from "prop-types";
 
 const ProductInfo = ({ title, rating, price, category, brand }) => {
   return (
@@ -17,6 +18,14 @@ const ProductInfo = ({ title, rating, price, category, brand }) => {
       </p>
     </div>
   );
+};
+
+ProductInfo.propTypes = {
+  title: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
+  category: PropTypes.string.isRequired,
+  brand: PropTypes.string.isRequired,
 };
 
 export default ProductInfo;

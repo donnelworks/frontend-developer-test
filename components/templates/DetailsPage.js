@@ -1,5 +1,6 @@
 import { ProductDesc, ProductInfo } from "../molecules";
 import { DetailProducts } from "../organisms";
+import PropTypes from "prop-types";
 
 const DetailsPage = ({ product }) => {
   const { images, description, title, rating, price, category, brand } =
@@ -18,6 +19,10 @@ const DetailsPage = ({ product }) => {
       </DetailProducts>
     </>
   );
+};
+
+DetailsPage.propTypes = {
+  product: PropTypes.object.isRequired,
 };
 
 export default DetailsPage;
