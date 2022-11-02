@@ -1,23 +1,4 @@
-import { useContext, useEffect, useState } from "react";
-import { DetailsContext } from "../../contexts/DetailsContext";
-
-const Slide = () => {
-  // Context
-  const { images } = useContext(DetailsContext);
-
-  // State
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    if (images) {
-      setLoading(false);
-    }
-  }, [images]);
-
-  if (loading) {
-    return null;
-  }
-
+const Slide = ({ images }) => {
   return (
     <div
       id="carouselExampleIndicators"

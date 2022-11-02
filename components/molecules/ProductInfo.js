@@ -1,23 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
 import { number, splitCapital } from "../../utils";
-import { DetailsContext } from "../../contexts/DetailsContext";
 
-const ProductInfo = () => {
-  // Context
-  const { title, rating, price, category, brand } = useContext(DetailsContext);
-
-  // State
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    if (price) {
-      setLoading(false);
-    }
-  }, [price]);
-
-  if (loading) {
-    return null;
-  }
-
+const ProductInfo = ({ title, rating, price, category, brand }) => {
   return (
     <div className="col-md-4 px-md-5">
       <h3 className="product-info_title mb-0">{title}</h3>

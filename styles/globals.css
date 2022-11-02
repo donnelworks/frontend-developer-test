@@ -261,3 +261,8 @@ input, button {
     font-weight: 400;
     line-height: 15px;
 }
+
+/* Loader */
+.loader {
+    width: 10%;
+}
